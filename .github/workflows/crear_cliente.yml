@@ -1,0 +1,17 @@
+name: Crear Cliente
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  crear_cliente:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      
+      - name: Ejecutar script de creación de cliente
+        run: python src/app.py NuevoCliente ServicioNuevo

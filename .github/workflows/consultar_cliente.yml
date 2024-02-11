@@ -1,0 +1,17 @@
+name: Consultar Cliente
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  consultar_cliente:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      
+      - name: Ejecutar script de consulta de cliente
+        run: python src/app.py ConsultarCliente

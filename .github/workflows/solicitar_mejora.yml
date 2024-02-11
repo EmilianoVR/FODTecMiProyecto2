@@ -1,0 +1,16 @@
+name: Solicitar Mejora
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  solicitar_mejora:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      
+      - name: Notificar al equipo de desarrollo
+        run: echo "Solicitud de mejora recibida en comentario: ${{ github.event.comment.body }}"

@@ -1,0 +1,17 @@
+name: Modificar Cliente
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  modificar_cliente:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      
+      - name: Ejecutar script de modificación de cliente
+        run: python src/app.py ModificarCliente DatosModificados
